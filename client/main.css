@@ -1,0 +1,9 @@
+.list-group-item.rag-red {
+	background-color: #CA003E;
+	color: white;
+}
+
+.list-group-item.rag-amber {
+	color: black;
+	background-color: #FDD556;
+}

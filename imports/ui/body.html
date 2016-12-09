@@ -1,0 +1,57 @@
+<body>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Meteor Dash</a>
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    {{#each all_aggregators}}
+      <div class="row">
+        <div class="col-md-4">
+          <div class="panel panel-default">
+            <div class="panel-heading">{{aggregator}} - Status</div>
+            <div class="panel-body">
+              <ul class="list-group">
+                {{#each red_aggregators_open}}
+                  {{> stream}}
+                {{/each}}
+              </ul>
+              <ul class="list-group">
+                {{#each amber_aggregators_open}}
+                  {{> stream}}
+                {{/each}}
+              </ul>      
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="panel panel-default">
+            <div class="panel-heading">{{aggregator}} - Investigating</div>
+            <div class="panel-body">
+              <ul class="list-group">
+                {{#each red_aggregators_investigating}}
+                  {{> stream}}
+                {{/each}}
+              </ul>
+              <ul class="list-group">
+                {{#each amber_aggregators_investigating}}
+                  {{> stream}}
+                {{/each}}
+              </ul>      
+            </div>
+          </div>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+</body>
+ 
